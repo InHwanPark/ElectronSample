@@ -41,7 +41,9 @@ class VideoList extends Component {
 
   renderVideos() {
     return _.map(this.props.videos, video => {
+      console.log('test -------------', video);
       const { name, path, duration, format, timemark, complete, outputPath, err } = video;
+      
       const formatedDuration = moment.duration(duration, 's').format("hh:mm:ss", {trim:false})
       return (
         <li className="collection-item avatar" key={path}>
